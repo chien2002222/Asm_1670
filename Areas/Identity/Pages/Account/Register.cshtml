@@ -1,0 +1,123 @@
+﻿@page
+@model RegisterModel
+
+<h1>@ViewData["Title"]</h1>
+
+
+
+
+
+
+@*<div class="row" style="margin-bottom:100px; box-shadow: 10px 10px 68px 10px #C0C0C0; padding-top:inherit; border-radius: 20px; transform: translate3d(-50%, -50%)">
+    <div class="col-md-6">
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2 style="font-size:30px; color: deepskyblue; font-weight: bold; text-align: center; text-transform:uppercase; font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif; margin-top: 5px">new account</h2>
+            <hr style="padding:2px; background:#FF6347" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label style="font-size: 20px; font-weight:bold; color: #B22222" asp-for="Input.Email"></label>
+                <input style="border-radius: 30px" asp-for="Input.Email" class="form-control" placeholder="Enter your email" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-size: 20px; font-weight:bold; color: #B22222" asp-for="Input.PhoneNumber"></label>
+                <input style="border-radius: 30px" asp-for="Input.PhoneNumber" class="form-control" placeholder="Enter your phone" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-size: 20px; font-weight:bold; color: #B22222" asp-for="Input.Password"></label>
+                <input style="border-radius: 30px" asp-for="Input.Password" class="form-control" placeholder="Enter your password" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label style="font-size: 20px; font-weight:bold; color: #B22222" asp-for="Input.ConfirmPassword"></label>
+                <input style="border-radius: 30px" asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button style="border-radius: 30px; font-size:20px" type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+    <div class="col-md-4" style="margin: 0px 0px 0px 50px ">
+        <img src="https://wallpaperaccess.com/full/52803.jpg" width="520" height="550" style="border-radius: 0 10px 10px 0" />
+    </div>
+</div>*@
+
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;">
+                    <div class="card-body p-md-5">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                <form class="mx-1 mx-md-4" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example1c" asp-for="Input.Email">Your Name</label>
+                                            <input  id="form3Example1c" asp-for="Input.Email" class="form-control" />      
+                                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example3c" asp-for="Input.PhoneNumber">Your Phone</label>
+                                            <input id="form3Example3c" asp-for="Input.PhoneNumber" class="form-control" />
+                                            
+                                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4c" asp-for="Input.Password">Password</label>
+                                            <input id="form3Example4c" class="form-control" asp-for="Input.Password" />
+                                            
+                                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex flex-row align-items-center mb-4">
+                                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                        <div class="form-outline flex-fill mb-0">
+                                            <label class="form-label" for="form3Example4cd" asp-for="Input.ConfirmPassword">Repeat your password</label>
+                                            <input asp-for="Input.ConfirmPassword" id="form3Example4cd" class="form-control" />
+                                            
+                                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                                     class="img-fluid" alt="Sample image">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

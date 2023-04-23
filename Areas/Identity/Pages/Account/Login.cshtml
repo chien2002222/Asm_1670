@@ -1,0 +1,138 @@
+﻿@page
+@model LoginModel
+
+
+
+@*<div class="container col-md-12">
+    <img src="~/Image/logo.png" width="200px" style="margin-left:430px" />
+</div>*@
+
+
+<style>
+    .gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+}
+}
+</style>
+@*<section>
+    <div class="imgBx">
+        <img src="https://wallpaperaccess.com/full/46674.jpg" />
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Login</h2>
+            <form id="account" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="inputBx">
+                    <span asp-for="Input.Email">Email</span>
+                    <input asp-for="Input.Email" type="text" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="inputBx">
+                    <span asp-for="Input.Password">Password</span>
+                    <input asp-for="Input.Password" type="password"/>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="remember">
+                    <label asp-for="Input.RememberMe"><input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)</label>
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="Sign In" name="" />
+                </div>
+                <div class="inputBx">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    </p>
+                    <p>
+                        Don't have account ?
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register now</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>*@
+
+
+
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="data:image/jpeg;base64,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"
+                                         style="width: 185px;" alt="logo">
+                                    <h4 class="mt-1 mb-5 pb-1">Welcome to FptShop</h4>
+                                </div>
+
+                                <form id="account" method="post">
+                                    <p>Please login to your account</p>
+
+                                    <div class="form-outline mb-4">
+                                        <span asp-for="Input.Email">Email</span>
+                                        <input asp-for="Input.Email" type="text" class="form-control  />
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <span asp-for="Input.Password">Password</span>
+                                        <input asp-for="Input.Password" type="password" class="form-control />
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
+                                            Log
+                                            in
+                                        </button>
+                                        <a class="text-muted" id="forgot-password" asp-page="./ForgotPassword">Forgot password?</a>
+                                    </div>
+
+                                    <div class="d-flex align-items-center justify-content-center pb-4">
+                                        <p class="mb-0 me-2 ">Don't have an account?</p>
+                                        <button type="submit" class="btn btn-outline-danger" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Create new</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4">Top prestige in Vietnam</h4>
+                                <p class="small mb-0">
+                                    FptBookShop is an online platform that allows users to access a large bookstore to search
+                                    and purchase the books they are interested in. Users can browse book catalogs,
+                                    search by author, title, or subject, and order online.
+                                    They can then choose different payment methods and wait for delivery to their door.
+                                    This system typically has a large number of books on offer, and also offers features such
+                                    as user reviews, reviews, recommendations, and special promotions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
