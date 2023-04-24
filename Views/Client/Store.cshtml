@@ -246,13 +246,13 @@
 </style>
 
 
-<div class="container"
+<div class="container">
 
-<form class="search_form mt-5" method="post" asp-controller="Client" asp-action="Search">
+   <form class="search_form mt-5" method="post" asp-controller="Client" asp-action="Search">
         <div class="box">
-            <input type="checkbox" id="check" />
+            <input type="checkbox" id="check"  />
             <div class="search-box">
-                <input type="search" placeholder="Search" name="keyword" required />
+            <input type="search" placeholder="Search" name="keyword" required />
                 <label for="check" class="icon">
                     <i class="fas fa-search"></i>
                 </label>
@@ -261,51 +261,51 @@
     </form>
  
 
-@if(TempData["Message"] != null)
-{
-    <h3 class="alert-danger mt-5 text-center">@TempData["Message"]</h3>
-}
-else
-{
+    @if(TempData["Message"] != null)
+    {
+        <h3 class="alert-danger mt-5 text-center">@TempData["Message"]</h3>
+    }
+    else
+    {
 
 
-    <a id="a" style="--crl:#00BFFF;" asp-controller="Client" asp-action="SortAscName" class="btn btn-primary">Name <i class="bi bi-arrow-up-square"></i></a>
-    <a id="a" style="--crl:#FF0000; margin-left:20px;" asp-controller="Client" asp-action="SortDscName" class="btn btn-success">Name <i class="bi bi-arrow-down-square"></i></a>
+        <a id="a" style="--crl:#00BFFF;" asp-controller="Client" asp-action="SortAscName" class="btn btn-primary">Name <i class="bi bi-arrow-up-square"></i></a>
+        <a id="a" style="--crl:#FF0000; margin-left:20px;" asp-controller="Client" asp-action="SortDscName" class="btn btn-success">Name <i class="bi bi-arrow-down-square"></i></a>
 
-    <a id="a" style="--crl:#663399; margin-left:20px;" asp-controller="Client" asp-action="SortAscPrice" class="btn btn-danger ">Price <i class="bi bi-currency-dollar"></i><i class="bi bi-arrow-up-square"></i></a>
-    <a id="a" style="--crl:#20B2AA; margin-left:20px;" asp-controller="Client" asp-action="SortDscPrice" class="btn btn-warning ">Price <i class="bi bi-currency-dollar"></i><i class="bi bi-arrow-down-square"></i></a>
+        <a id="a" style="--crl:#663399; margin-left:20px;" asp-controller="Client" asp-action="SortAscPrice" class="btn btn-danger ">Price <i class="bi bi-currency-dollar"></i><i class="bi bi-arrow-up-square"></i></a>
+        <a id="a" style="--crl:#20B2AA; margin-left:20px;" asp-controller="Client" asp-action="SortDscPrice" class="btn btn-warning ">Price <i class="bi bi-currency-dollar"></i><i class="bi bi-arrow-down-square"></i></a>
 
 
-            <section id="parts" class="parts">
+                <section id="parts" class="parts">
     
-                <div class="heading">
-                    <span>All Books of Shop</span>
+                    <div class="heading">
+                        <span>All Books of Shop</span>
                     
-                </div>
-                <div class="parts-container container">
-                    @foreach (var books in Model)
-                    {
-                    <div class="box">
-                        <img src="@books.Image" alt="">
-                         <h3>@books.Title</h3>
-                         <span>@books.Price $</span>
-                         <i class="bx bxs-star"><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i> 1000Views</i>
-                         @if (books.Quantity == 0)
-                         {
-                            <h6 class="card-title">Out of Stock. Please come back later.</h6>
-
-                         }
-                         else
-                         {
-                            <a asp-controller="Client" asp-action="Detail" asp-route-id="@books.Id" class="btn">Buy Now</a>
-                            <a class="details" asp-controller="Client" asp-action="Detail" asp-route-id="@books.Id">View Details</a>
-                         }
                     </div>
-                    }
-                </div>
-            </section>
+                    <div class="parts-container container">
+                        @foreach (var books in Model)
+                        {
+                        <div class="box">
+                            <img src="@books.Image" alt="">
+                             <h3>@books.Title</h3>
+                             <span>@books.Price $</span>
+                             <i class="bx bxs-star"><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i><i class="bx bxs-star"></i> 1000Views</i>
+                             @if (books.Quantity == 0)
+                             {
+                                <h6 class="card-title">Out of Stock. Please come back later.</h6>
 
-            }
+                             }
+                             else
+                             {
+                                <a asp-controller="Client" asp-action="Detail" asp-route-id="@books.Id" class="btn">Buy Now</a>
+                                <a class="details" asp-controller="Client" asp-action="Detail" asp-route-id="@books.Id">View Details</a>
+                             }
+                        </div>
+                        }
+                    </div>
+                </section>
+
+                }
 
 </div>
 
