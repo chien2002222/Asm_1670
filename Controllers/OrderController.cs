@@ -41,7 +41,8 @@ namespace FPTBook.Controllers
             return Redirect("~/Client/Store");
         }
 
-        [Authorize(Roles = "BookOwner")]
+        //[Authorize(Roles = "BookOwner")]
+        //[Authorize(Roles = "Customer")]
         public IActionResult Record()
         {
             var customerOrder = context.Orders.ToList();
@@ -49,7 +50,8 @@ namespace FPTBook.Controllers
             return View(customerOrder) ;
         }
 
-        [Authorize (Roles = "BookOwner")]
+        //Authorize (Roles = "BookOwner")]
+        //[Authorize(Roles = "Customer")]
         public IActionResult Approve(int id, int quantity, int bookId)
         {
             TempData["approve"] = "Order has been approved";
@@ -61,7 +63,7 @@ namespace FPTBook.Controllers
             return RedirectToAction("Record");
         }
 
-        [Authorize(Roles = "BookOwner")]
+        //[Authorize(Roles = "BookOwner")]
         public IActionResult Cancel(int id)
         {
             TempData["cancel"] = "Order has been cancelled";
