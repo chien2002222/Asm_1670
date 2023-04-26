@@ -18,7 +18,7 @@ namespace FPTBook.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            return View();
+            return View(context.Books.ToList());
         }
 
         public IActionResult About()
