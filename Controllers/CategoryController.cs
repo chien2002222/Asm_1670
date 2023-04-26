@@ -74,7 +74,7 @@ namespace FPTBook.Controllers
         [Authorize(Roles = "Administrator")]
         public IActionResult Delete(int id)
         {
-            TempData["Message"] = "Delete successfully";
+            TempData["Message"] = " Delete successfully ";
             var category = context.Categories.Find(id);
             context.Categories.Remove(category);
             context.SaveChanges();
@@ -90,7 +90,7 @@ namespace FPTBook.Controllers
         [HttpPost]
         public IActionResult Request(Request request)
         {
-            TempData["Message"] = "Submitted successfully. Request is waiting for approval";
+            TempData["Message"] = " Submitted successfully. Request is waiting for approval ";
             context.Requests.Add(request);
             context.SaveChanges();
             return View();
